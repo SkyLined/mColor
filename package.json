@@ -1,0 +1,30 @@
+{
+  "name": "mcolor",
+  "description": "Node module to create and manipulate RGB/HSL colors",
+  "keywords": [
+    "color",
+    "colors",
+    "RGB",
+    "RGBA",
+    "HSL"
+    "HSLA"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "SkyLined",
+    "email": "berendjanwever@gmail.com",
+    "url": "https://github.com/SkyLined"
+  },
+  "bugs": {
+    "url": "https://github.com/SkyLined/mColor/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SkyLined/mColor"
+  },
+  "main": "./index.js",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "license": "CC0-1.0"
+}
