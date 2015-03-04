@@ -1,6 +1,6 @@
 {
   "name": "mcolor",
-  "description": "Node module to create and manipulate RGB/HSL colors",
+  "description": "Module with classes to create and manipulate RGB/HSL colors",
   "keywords": [
     "color",
     "colors",
