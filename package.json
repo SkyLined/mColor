@@ -6,7 +6,7 @@
     "colors",
     "RGB",
     "RGBA",
-    "HSL"
+    "HSL",
     "HSLA"
   ],
   "version": "0.0.1",
