@@ -10,9 +10,9 @@ Getting Started
   `npm install mcolor`
   
   Optionally: rename `mcolor` to `mColor`: npm is unable to handle the
-  complexity of uppercase characters in a module name. Node on Windows does not
-  have this problem, so renaming the folder is not required for you to use the
-  module.
+  complexity of uppercase characters in a module name. Node.js on Windows does
+  not have this problem, so renaming the folder is not required for you to use
+  the module.
   
 2. Require mColor in your project.
   
@@ -34,8 +34,10 @@ Getting Started
   var oWhiteHSLA = oRedHSLA.foClone().foSetL(1);
   // Create a copy of transparent green and have it overlaying opaque pink.
   var oGreenMix = oTransparentGreenHSLA.foClone().foOver(oPinkRGBA) 
-  // Create a copy of transparent green and make it opaque and add red to make yellow.
-  var oYellowRGBA = oTransparentGreenHSLA.foClone().foSetA(1).foGetRGBA().foSetR(1);
+  // Create a copy of transparent green and make it opaque and add red to make
+  // yellow.
+  var oYellowRGBA = oTransparentGreenHSLA.foClone().foSetA(1)
+                                         .foGetRGBA().foSetR(1);
   ```
 Notes
 -----
