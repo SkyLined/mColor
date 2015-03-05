@@ -71,5 +71,17 @@ cHSLA.prototype.foGetRGBA = function() {
   }
   return new cRGBA(nR, nG, nB, this._nA);
 }
+cHSLA.foGetColorTemperature = function (uT, nTAlpha) {
+  return require("./cRGBA").foGetColorTemperature(uT, nTAlpha).foGetHSLA();
+}
+
+cHSLA.prototype.foApplyColorTemperature = function (uT) {
+  // algorithm based on http://www.tannerhelland.com/4435/convert-temperature-rgb-algorithm-code/
+  var nTColorAmount = 1/3, nTLuminosityAmount = 3/4;
+  var nL = this.nL;
+  this.foUnder(cHSLA.foGetColorTemperature(uT, nTColorAmount));
+  this.nL += (nL - this.nL) * nTLuminosityAmount;
+  return this;
+}
 
 module.exports = cHSLA;

@@ -150,5 +150,23 @@ cRGBA.prototype.foGetHSLA = function() {
   }
   return cHSLA(nH, nS, nL, this._nA);
 }
-
+cRGBA.foGetColorTemperature = function (uT, nTAlpha) {
+  if (uT <= 6600) {
+    return cRGBA(
+      1,
+      Math.max(0, Math.min(1, 0.390081578769020 * Math.log(uT / 100) - 0.63184144379)),
+      Math.max(0, Math.min(1, 0.543206789110196 * Math.log(uT / 100 - 10) - 1.19625408914)),
+      nTAlpha === undefined ? 1 : nTAlpha
+    );
+  }
+  return cRGBA(
+    Math.max(0, Math.min(1, 1.292936186062745 * Math.pow(uT / 100 - 60, -0.1332047592))),
+    Math.max(0, Math.min(1, 1.129890860895294 * Math.pow(uT / 100 - 60, -0.0755148492))),
+    1,
+    nTAlpha === undefined ? 1 : nTAlpha
+  );
+};
+cRGBA.prototype.foApplyColorTemperature = function (uT) {
+  return this.foCopy(this.foGetHSLA().foApplyColorTemperature(uT));
+}
 module.exports = cRGBA;
