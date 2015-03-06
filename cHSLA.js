@@ -17,7 +17,7 @@ cHSLA.prototype.foSetHSL = cHSLA.prototype.foSetHSLA = function (nH, nS, nL, nA)
   return this;
 }
 cHSLA.prototype.toString = function() {
-  return 'cHSLA(' + this.nH + ',' + this.nS + ',' + this.nL +  + ',' + this.nA + ')';
+  return 'cHSLA(' + this.nH + ',' + this.nS + ',' + this.nL + ',' + this.nA + ')';
 }
 Object.defineProperty(cHSLA.prototype, "nH", {
   "get": function cHSLA_get_nH() { return this._nH; },
