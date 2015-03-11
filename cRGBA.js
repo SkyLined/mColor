@@ -1,5 +1,5 @@
 function cRGBA(nR_sRGBA, nG, nB, nA) {
-  if (this.constructor != cRGBA) return new cRGBA(nR_sRGBA, nG, nB, nA);
+  if (this.constructor != arguments.callee) return new arguments.callee(nR_sRGBA, nG, nB, nA);
   if (nR_sRGBA.constructor == String) {
     this.sRGBA = nR_sRGBA;
   } else {
