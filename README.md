@@ -25,6 +25,8 @@ Getting Started
       oWhiteHSLA = new mColor.cHSLA(0, 0, 1, 1),
       oRedRGBA = new mColor.cRGBA(1, 0, 0, 1),
       oRedHSLA = new mColor.cHSLA(0, 1, 0.5, 1),
+      oBlueRGBA = new mColor.cRGBA("blue"),
+      oNavyHSLA = new mColor.cHSLA("navy"),
       oTransparentGreenRGBA = new mColor.cRGBA(0, 1, 0, 0.5),
       oTransparentGreenHSLA = new mColor.cHSLA(1/3, 1, 0.5, 0.5),
       oPinkRGBA = new mColor.cRGBA(1, 0.75, 1, 1),
