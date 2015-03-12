@@ -66,6 +66,9 @@ cHSLA.prototype.foDarken = function(nAmount) { // oHSLA.lighten(0.5) makes it 50
 cHSLA.prototype.foOver = function(oOther) { return this.foCopy(this.foGetRGBA().foOver(oOther)); };
 cHSLA.prototype.foUnder = function(oOther) { return this.foCopy(this.foGetRGBA().foUnder(oOther)); };
 
+cHSLA.prototype.foGetHSLA = function() {
+  return this;
+}
 cHSLA.prototype.foGetRGBA = function() {
   var cRGBA = require("./cRGBA");
   if(this._nL==0) {

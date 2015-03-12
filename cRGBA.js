@@ -136,6 +136,9 @@ cRGBA.prototype.foUnder = function(oOther) {
   this._nA += (1          - oOther._nA) * oOther._nA;
   return this;
 }
+cRGBA.prototype.foGetRGBA = function() {
+  return this;
+}
 cRGBA.prototype.foGetHSLA = function() {
   var cHSLA = require("./cHSLA");
   var nMin = Math.min(this._nR, this._nG, this._nB),
