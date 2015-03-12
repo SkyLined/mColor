@@ -42,6 +42,13 @@ Object.defineProperty(cHSLA.prototype, "nA", {
   "get": function cHSLA_get_nA() { return this._nA; },
   "set": function cHSLA_set_nA(nA) { this._nA = Math.max(0, Math.min(1, nA)); },
 });
+Object.defineProperty(cRGBA.prototype, "sRGB", {
+  "get": function cRGBA_get_sRGB() {
+    var oRGBA = this.foGetRGBA();
+    return '#' + oRGBA.sR + oRGBA.sG + oRGBA.sB;
+  },
+});
+
 cHSLA.prototype.foLighten = function (nAmount) { // oHSLA.lighten(0.5) makes it 50% lighter
   this._nL += (1 - this._nL) * Math.max(0, Math.min(1, nAmount));
   return this;
