@@ -42,13 +42,13 @@ Object.defineProperty(cHSLA.prototype, "nA", {
   "get": function cHSLA_get_nA() { return this._nA; },
   "set": function cHSLA_set_nA(nA) { this._nA = Math.max(0, Math.min(1, nA)); },
 });
-Object.defineProperty(cRGBA.prototype, "sRGB", {
+Object.defineProperty(cHSLA.prototype, "sRGB", {
   "get": function cRGBA_get_sRGB() {
     var oRGBA = this.foGetRGBA();
     return '#' + oRGBA.sR + oRGBA.sG + oRGBA.sB;
   },
 });
-Object.defineProperty(cRGBA.prototype, "sRGBA", {
+Object.defineProperty(cHSLA.prototype, "sRGBA", {
   "get": function cRGBA_get_sRGB() {
     var oRGBA = this.foGetRGBA();
     return '#' + oRGBA.sR + oRGBA.sG + oRGBA.sB + oRGBA.sA;
