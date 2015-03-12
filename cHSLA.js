@@ -48,6 +48,12 @@ Object.defineProperty(cRGBA.prototype, "sRGB", {
     return '#' + oRGBA.sR + oRGBA.sG + oRGBA.sB;
   },
 });
+Object.defineProperty(cRGBA.prototype, "sRGBA", {
+  "get": function cRGBA_get_sRGB() {
+    var oRGBA = this.foGetRGBA();
+    return '#' + oRGBA.sR + oRGBA.sG + oRGBA.sB + oRGBA.sA;
+  },
+});
 
 cHSLA.prototype.foLighten = function (nAmount) { // oHSLA.lighten(0.5) makes it 50% lighter
   this._nL += (1 - this._nL) * Math.max(0, Math.min(1, nAmount));
