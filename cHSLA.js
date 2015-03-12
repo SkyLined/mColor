@@ -1,6 +1,13 @@
-function cHSLA(nH, nS, nL, nA) {
-  if (this.constructor != cHSLA) return new cHSLA(nH, nS, nL, nA);
-  this.nH = nH; this.nS = nS; this.nL = nL; this.nA = nA == undefined ? 1 : nA;
+var dsRGB_by_sName = require("./dsRGB_by_sName.js");
+
+function cHSLA(nH_sName, nS, nL, nA) {
+  if (this.constructor != cHSLA) return new cHSLA(nH_sName, nS, nL, nA);
+  if (nH_sName in dsRGB_by_sName) {
+    var cRGBA = require("./cRGBA");
+    this.foCopy(new cRGBA(dsRGB_by_sName[nH_sName]));
+  } else {
+    this.nH = nH_sName; this.nS = nS; this.nL = nL; this.nA = nA === undefined ? 1 : nA;
+  }
 };
 cHSLA.prototype.foClone = function() { return new cHSLA(this._nH, this._nS, this._nL, this._nA); }
 cHSLA.prototype.foCopy = function(oOther) {
@@ -13,7 +20,7 @@ cHSLA.prototype.foSetS = function (nS) { this.nS = nS; return this; }
 cHSLA.prototype.foSetL = function (nL) { this.nL = nL; return this; }
 cHSLA.prototype.foSetA = function (nA) { this.nA = nA; return this; }
 cHSLA.prototype.foSetHSL = cHSLA.prototype.foSetHSLA = function (nH, nS, nL, nA) {
-  this.nH = nH; this.nS = nS; this.nL = nL; this.nA = nA == undefined ? 1 : nA;
+  this.nH = nH; this.nS = nS; this.nL = nL; this.nA = nA === undefined ? 1 : nA;
   return this;
 }
 cHSLA.prototype.toString = function() {

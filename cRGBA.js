@@ -1,9 +1,13 @@
-function cRGBA(nR_sRGBA, nG, nB, nA) {
-  if (this.constructor != arguments.callee) return new arguments.callee(nR_sRGBA, nG, nB, nA);
-  if (nR_sRGBA.constructor == String) {
+var dsRGB_by_sName = require("./dsRGB_by_sName.js");
+
+function cRGBA(nR_sRGBA_sName, nG, nB, nA) {
+  if (this.constructor != arguments.callee) return new arguments.callee(nR_sRGBA_sName, nG, nB, nA);
+  if (nR_sRGBA_sName in dsRGB_by_sName) {
+    this.sRGBA = dsRGB_by_sName[nR_sRGBA_sName];
+  } else if (nR_sRGBA_sName.constructor == String) {
     this.sRGBA = nR_sRGBA;
   } else {
-    this.nR = nR_sRGBA; this.nG = nG; this.nB = nB; this.nA = nA == undefined ? 1 : nA;
+    this.nR = nR_sRGBA_sName; this.nG = nG; this.nB = nB; this.nA = nA === undefined ? 1 : nA;
   }
 }
 cRGBA.prototype.foClone = function() { return new cRGBA(this._nR, this._nG, this._nB, this._nA); };
@@ -20,7 +24,7 @@ cRGBA.prototype.foSetRGB = cRGBA.prototype.foSetRGBA = function (nR_sRGBA, nG, n
   if (nR_sRGBA.constructor == String) {
     this.sRGBA = nR_sRGBA;
   } else {
-    this.nR = nR_sRGBA; this.nG = nG; this.nB = nB; this.nA = nA == undefined ? 1 : nA;
+    this.nR = nR_sRGBA; this.nG = nG; this.nB = nB; this.nA = nA === undefined ? 1 : nA;
   }
   return this;
 }
