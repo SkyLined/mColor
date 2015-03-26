@@ -78,7 +78,7 @@ Values in the range [0, 1], which represent the intensity values for the
 red(`nR`), green(`nG`) and blue(`nB`) color channels and the alpha
 transparency(`nA`). When setting these properties to values outside the valid
 range, they will be capped to fall within it.
-##### number `Number uR`, `Number uG`, `Number uB`, `Number uA` (read, write)
+##### `Number uR`, `Number uG`, `Number uB`, `Number uA` (read, write)
 Values are integers in the range [0, 255], which represent the intensity values
 for the red(`uR`), green(`uG`) and blue(`uB`) color channels and the alpha
 transparency(`uA`) of the color. When setting these properties to values outside
