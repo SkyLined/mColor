@@ -65,6 +65,7 @@ or quadruplet. If a quadruplet is provided, the last digits provide the alpha
 transparency value. Otherwise, the color will be fully opaque. Shorthand forms
 are accepted, so "#FFF", "#FFFF", "#FFFFFF", and "#FFFFFFFF" are all opaque
 white.
+##### `[new] cRGBA(Number nR, Number nG, Number nB [, Number nA]);`
 Where `nR`, `nG`, `nB`, and `nA` are numbers in the range [0, 1], which provide
 intensity values for the red(`nR`), green(`nG`) and blue(`nB`) color channels
 and the alpha transparency(`nA`). If `nA` is not provided, it is set to 1 and
@@ -83,14 +84,14 @@ for the red(`uR`), green(`uG`) and blue(`uB`) color channels and the alpha
 transparency(`uA`) of the color. When setting these properties to values outside
 the valid range or floating point values, they will be capped to fall within it
 and rounded to the nearest integer.
-##### string `String sR`, `String sG`, `String sB`, `String sA` (read, write)
+##### `String sR`, `String sG`, `String sB`, `String sA` (read, write)
 Values are hexadecimal number strings in the range ["00", "FF"], which represent
 the intensity values for the red(`sR`), green(`sG`) and blue(`uB`) color
 channels and the alpha transparency(`sA`) of the color. When setting these
 properties to values outside the valid range, they will be capped to fall
 within it. When reading these values, they are padded to always be two
 characters long (eg. "0F" instead of "F").
-##### string `String sRGB`, `String sRGBA` (read, write)
+##### `String sRGB`, `String sRGBA` (read, write)
 Values are hexadecimal number strings in the range ["000000", "FFFFFFF"], or
 for `sRGBA` optionally ["00000000", "FFFFFFFFF"], representing a
 [hex triplet](http://en.wikipedia.org/wiki/Web_colors#Hex_triplet) or
@@ -120,20 +121,22 @@ allowing you to "chain" multiple method calls.
 ##### `cRGBA foSetA(Number nA)`
 Set the `nA` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA foSetRGB(string sRGB)`
+##### `cRGBA foSetRGB(String sRGB)`
 Set the `sRGB` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA foSetRGBA(string sRGBA)`
+##### `cRGBA foSetRGBA(String sRGBA)`
 Set the `sRGBA` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
+##### `cRGBA foSetRGB(Number nR, Number nG, Number nB)`
 Set the `nR`, `nG`, and `nB` properties and return the object on which the
 method is called, allowing you to "chain" multiple method calls.
+##### `cRGBA foSetRGBA(Number nR, Number nG, Number nB, Number nA)`
 Set the `nR`, `nG`, `nB`, and `nA` properties and return the object on which the
 method is called, allowing you to "chain" multiple method calls.
-##### `string fsGetCSSRGB()`
+##### `String fsGetCSSRGB()`
 Return a string representation of the color in the form "rgb(number, number,
 number)" that can be used in Cascading Style Sheets.
-##### `string fsGetCSSRGBA()`
+##### `String fsGetCSSRGBA()`
 Return a string representation of the color in the form "rgba(number, number,
 number, number)" that can be used in Cascading Style Sheets.
 ##### `cRGBA foOver(cRGBA oOther)` or `cRGBA foOver(cHSLA oOther)`
@@ -159,6 +162,7 @@ floatinS point numbers in the range [0, 1], resultinS in very little risk of
 roundinS errors.
 
 #### Constructors:
+##### `[new] cHSLA(Number nH, Number nS, Number nL [, Number nA]);`
 Where `nH`, `nS`, `nL`, and `nA` are numbers in the range [0, 1], which provide
 values for the hue(`nH`), saturation(`nS`) and luminosity(`nL`) of the color
 and the alpha transparency(`nA`). If `nA` is not provided, it is set to 1 and
@@ -171,7 +175,7 @@ Values in the range [0, 1], which represent the hue(`nH`), saturation(`nS`) and
 luminosity(`nL`) of the color and the alpha transparency(`nA`). When setting
 these properties to values outside the valid range, they will be capped to fall
 within it.
-##### string `String sRGB`, `String sRGBA` (read only)
+##### `String sRGB`, `String sRGBA` (read only)
 Values are hexadecimal number strings in the range ["000000", "FFFFFFF"], or
 for `sRGBA` optionally ["00000000", "FFFFFFFFF"], representing a
 [hex triplet](http://en.wikipedia.org/wiki/Web_colors#Hex_triplet) or
