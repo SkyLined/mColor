@@ -1,3 +1,5 @@
+module.exports = cHSLA;
+
 var dsRGB_by_sName = require("./dsRGB_by_sName.js");
 
 function cHSLA(nH_sName, nS, nL, nA) {
@@ -106,5 +108,3 @@ cHSLA.prototype.foApplyColorTemperature = function (uT) {
   this.nL += (nL - this.nL) * nTLuminosityAmount;
   return this;
 }
-
-module.exports = cHSLA;

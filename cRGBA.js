@@ -1,3 +1,5 @@
+module.exports = cRGBA;
+
 var dsRGB_by_sName = require("./dsRGB_by_sName.js");
 
 function cRGBA(nR_sRGBA_sName, nG, nB, nA) {
@@ -176,4 +178,3 @@ cRGBA.foGetColorTemperature = function (uT, nTAlpha) {
 cRGBA.prototype.foApplyColorTemperature = function (uT) {
   return this.foCopy(this.foGetHSLA().foApplyColorTemperature(uT));
 }
-module.exports = cRGBA;
