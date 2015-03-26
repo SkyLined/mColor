@@ -59,13 +59,12 @@ floating point numbers in the range [0, 1], resulting in very little risk of
 rounding errors.
 
 #### Constructors:
-##### `oRGBA = [new] cRGBA(string sRGBA);`
+##### `[new] cRGBA(String sRGBA);`
 Where `sRGBA` is a [hex triplet](http://en.wikipedia.org/wiki/Web_colors#Hex_triplet)
 or quadruplet. If a quadruplet is provided, the last digits provide the alpha
 transparency value. Otherwise, the color will be fully opaque. Shorthand forms
 are accepted, so "#FFF", "#FFFF", "#FFFFFF", and "#FFFFFFFF" are all opaque
 white.
-##### `oRGBA = [new] cRGBA(number nR, number nG, number nB [, number nA]);`
 Where `nR`, `nG`, `nB`, and `nA` are numbers in the range [0, 1], which provide
 intensity values for the red(`nR`), green(`nG`) and blue(`nB`) color channels
 and the alpha transparency(`nA`). If `nA` is not provided, it is set to 1 and
@@ -73,25 +72,25 @@ the color will be fully opaque. Values outside the valid range will be capped
 to fall within it.
 
 #### Properties:
-##### number `oRGBA.nR`, `oRGBA.nG`, `oRGBA.nB`, `oRGBA.nA` (read, write)
+##### `Number nR`, `Number nG`, `Number nB`, `Number nA` (read, write)
 Values in the range [0, 1], which represent the intensity values for the
 red(`nR`), green(`nG`) and blue(`nB`) color channels and the alpha
 transparency(`nA`). When setting these properties to values outside the valid
 range, they will be capped to fall within it.
-##### number `oRGBA.uR`, `oRGBA.uG`, `oRGBA.uB`, `oRGBA.uA` (read, write)
+##### number `Number uR`, `Number uG`, `Number uB`, `Number uA` (read, write)
 Values are integers in the range [0, 255], which represent the intensity values
 for the red(`uR`), green(`uG`) and blue(`uB`) color channels and the alpha
 transparency(`uA`) of the color. When setting these properties to values outside
 the valid range or floating point values, they will be capped to fall within it
 and rounded to the nearest integer.
-##### string `oRGBA.sR`, `oRGBA.sG`, `oRGBA.sB`, `oRGBA.sA` (read, write)
+##### string `String sR`, `String sG`, `String sB`, `String sA` (read, write)
 Values are hexadecimal number strings in the range ["00", "FF"], which represent
 the intensity values for the red(`sR`), green(`sG`) and blue(`uB`) color
 channels and the alpha transparency(`sA`) of the color. When setting these
 properties to values outside the valid range, they will be capped to fall
 within it. When reading these values, they are padded to always be two
 characters long (eg. "0F" instead of "F").
-##### string `oRGBA.sRGB`, `oRGBA.sRGBA` (read, write)
+##### string `String sRGB`, `String sRGBA` (read, write)
 Values are hexadecimal number strings in the range ["000000", "FFFFFFF"], or
 for `sRGBA` optionally ["00000000", "FFFFFFFFF"], representing a
 [hex triplet](http://en.wikipedia.org/wiki/Web_colors#Hex_triplet) or
@@ -101,57 +100,56 @@ are accepted when setting these properties, so "#FFF", "#FFFF", "#FFFFFF", and
 "#FFFFFFFF" are all opaque white.
 
 #### Methods:
-##### `cRGBA oRGBA.foClone()`
-Create and return a new cRGBA instance that has the same color as the object on
-which the method is called.
-##### `cRGBA oRGBA.foCopy(cRGBA oOther)` or `cRGBA oRGBA.foCopy(cHSLA oOther)`
-Copy the color and transparencty from the given cRGBA or cHSLA instance into
-the object on which the method is called. The object on which the method is
-called is returned, allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetR(number nR)`
+##### `cRGBA foClone()`
+Create and return a new `cRGBA` instance that has the same color as the object
+on which the method is called.
+##### `cRGBA foCopy(cRGBA oOther)` or `cRGBA foCopy(cHSLA oOther)`
+Copy the color and transparency from the `cRGBA` or `cHSLA` instance provided as
+the argument to the method to the `cRGBA` instance on which the method is
+called. The object on which the method is called is returned, allowing you to
+"chain" multiple method calls.
+##### `cRGBA foSetR(Number nR)`
 Set the `nR` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetG(number nG)`
+##### `cRGBA foSetG(Number nG)`
 Set the `nG` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetB(number nB)`
+##### `cRGBA foSetB(Number nB)`
 Set the `nB` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetA(number nA)`
+##### `cRGBA foSetA(Number nA)`
 Set the `nA` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetRGB(string sRGB)`
+##### `cRGBA foSetRGB(string sRGB)`
 Set the `sRGB` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetRGBA(string sRGBA)`
+##### `cRGBA foSetRGBA(string sRGBA)`
 Set the `sRGBA` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetRGB(number nR, number nG, number nB)`
 Set the `nR`, `nG`, and `nB` properties and return the object on which the
 method is called, allowing you to "chain" multiple method calls.
-##### `cRGBA oRGBA.foSetRGBA(number nR, number nG, number nB, number nA)`
 Set the `nR`, `nG`, `nB`, and `nA` properties and return the object on which the
 method is called, allowing you to "chain" multiple method calls.
-##### `string oRGBA.fsGetCSSRGB()`
+##### `string fsGetCSSRGB()`
 Return a string representation of the color in the form "rgb(number, number,
 number)" that can be used in Cascading Style Sheets.
-##### `string oRGBA.fsGetCSSRGBA()`
+##### `string fsGetCSSRGBA()`
 Return a string representation of the color in the form "rgba(number, number,
 number, number)" that can be used in Cascading Style Sheets.
-##### `cRGBA oRGBA.foOver(cRGBA oOther)` or `cRGBA oRGBA.foOver(cHSLA oOther)`
+##### `cRGBA foOver(cRGBA oOther)` or `cRGBA foOver(cHSLA oOther)`
 Modify the color as if it was shown over another color (`oOther`). For instance,
 if the color is transparent red, and the `oOther` color is opaque white, the
 color will become opaque pink. If the `oOther` color is transparent white, the
 color will become less transparent pink. If the color is opaque, the color will
 not change. The object on which the method is called is returned, allowing you
 to "chain" multiple method calls.
-##### `cRGBA oRGBA.foUnder(cRGBA oOther)` or `cRGBA oRGBA.foUnder(cHSLA oOther)`
+##### `cRGBA foUnder(cRGBA oOther)` or `cRGBA foUnder(cHSLA oOther)`
 Modify the color as if the color was shown under another color (`oOther`).
 `oOne.foUnder(oOther)` results in the same color as `oOther.foOver(oOne)`, but
 the result is store in `oOne` in the former and `oOther` in the later. The
 object on which the method is called is returned, allowing you to "chain"
 multiple method calls.
-##### `cHSLA oRGBA.foGetHSLA()`
+##### `cHSLA foGetHSLA()`
 Create and return a `cHSLA` instance that represents the same color.
 
 ### `class cHSLA`
@@ -161,7 +159,6 @@ floatinS point numbers in the range [0, 1], resultinS in very little risk of
 roundinS errors.
 
 #### Constructors:
-##### `oHSLA = [new] cHSLA(number nH, number nS, number nL [, number nA]);`
 Where `nH`, `nS`, `nL`, and `nA` are numbers in the range [0, 1], which provide
 values for the hue(`nH`), saturation(`nS`) and luminosity(`nL`) of the color
 and the alpha transparency(`nA`). If `nA` is not provided, it is set to 1 and
@@ -169,56 +166,62 @@ the color will be fully opaque. Values outside the valid range will be capped
 to fall within it. A hue value of 0 or 1 represents red, 1/6 yellow, 1/3 green,
 1/2 cyan, 2/3 blue and 5/6 purple.
 #### Properties:
-##### number `oHSLA.nH`, `oHSLA.nS`, `oHSLA.nL`, `oHSLA.nA` (read, write)
+##### `Number nH`, `Number nS`, `Number nL`, `Number nA` (read, write)
 Values in the range [0, 1], which represent the hue(`nH`), saturation(`nS`) and
 luminosity(`nL`) of the color and the alpha transparency(`nA`). When setting
 these properties to values outside the valid range, they will be capped to fall
 within it.
+##### string `String sRGB`, `String sRGBA` (read only)
+Values are hexadecimal number strings in the range ["000000", "FFFFFFF"], or
+for `sRGBA` optionally ["00000000", "FFFFFFFFF"], representing a
+[hex triplet](http://en.wikipedia.org/wiki/Web_colors#Hex_triplet) or
+quadruplet.
 
 #### Methods:
-##### `cHSLA oHSLA.foClone()`
+##### `cHSLA foClone()`
 Create and return a new cHSLA instance that has the same color as the object on
 which the method is called.
-##### `cHSLA oHSLA.foCopy(cHSLA oOther)` or `cHSLA oHSLA.foCopy(cRGBA oOther)`
-Copy the color and transparencty from the given cHSLA or cRGBA instance into
-the object on which the method is called. The object on which the method is
-called is returned, allowing you to "chain" multiple method calls.
-##### `cHSLA oHSLA.foSetH(number nH)`
+##### `cHSLA foCopy(cHSLA oOther)` or `cHSLA foCopy(cRGBA oOther)`
+Copy the color and transparencty from the `cHSLA` or `cRGBA` instance provided
+as the argument to the method into the `cHSLA` instance on which the method is
+called. The object on which the method is called is returned, allowing you to
+"chain" multiple method calls.
+##### `cHSLA foSetH(Number nH)`
 Set the `nH` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cHSLA oHSLA.foSetS(number nS)`
+##### `cHSLA foSetS(Number nS)`
 Set the `nS` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cHSLA oHSLA.foSetL(number nL)`
+##### `cHSLA foSetL(Number nL)`
 Set the `nL` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cHSLA oHSLA.foSetA(number nA)`
+##### `cHSLA foSetA(Number nA)`
 Set the `nA` property and return the object on which the method is called,
 allowing you to "chain" multiple method calls.
-##### `cHSLA oHSLA.foLighten(number nAmount)`
+##### `cHSLA foLighten(Number nAmount)`
 Increase the luminosity by nAmount (where values <=0 mean the color does not
 change, 0.5 means the color becomes 50% closer to white and >=1 means the color
 becomes white). The object on which the method is called is returned, allowing
 you to "chain" multiple method calls. 
-##### `cHSLA oHSLA.foDarken(number nAmount)`
+##### `cHSLA foDarken(Number nAmount)`
 Decrease the luminosity by nAmount (where values <=0 mean the color does not
 change, 0.5 means the color becomes 50% closer to black and >=1 means the color
 becomes black). The object on which the method is called is returned, allowing
 you to "chain" multiple method calls. 
-##### `cHSLA oHSLA.foOver(cHSLA oOther)` or `cHSLA oHSLA.foOver(cHSLA oOther)`
+##### `cHSLA foOver(cHSLA oOther)` or `cHSLA foOver(cHSLA oOther)`
 Modify the color as if it was shown over another color (`oOther`). For instance,
 if the color is transparent red, and the `oOther` color is opaque white, the
 color will become opaque pink. If the `oOther` color is transparent white, the
 color will become less transparent pink. If the color is opaque, the color will
 not change. The object on which the method is called is returned, allowing you
 to "chain" multiple method calls.
-##### `cHSLA oHSLA.foUnder(cHSLA oOther)` or `cHSLA oHSLA.foUnder(cHSLA oOther)`
+##### `cHSLA foUnder(cHSLA oOther)` or `cHSLA foUnder(cHSLA oOther)`
 Modify the color as if the color was shown under another color (`oOther`).
 `oOne.foUnder(oOther)` results in the same color as `oOther.foOver(oOne)`, but
 the result is store in `oOne` in the former and `oOther` in the later. The
 object on which the method is called is returned, allowing you to "chain"
 multiple method calls.
-##### `cRGBA oHSLA.foGetRGBA()`
+##### `cRGBA foGetRGBA()`
 Create and return a `cRGBA` instance that represents the same color.
 --------------------------------------------------------------------------------
 
